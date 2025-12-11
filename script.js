@@ -4,15 +4,13 @@ let find = document.getElementById('find')
 
 
 regions.forEach(region => {
-    let randomIndex = Math.floor(Math.random() * regions.length)
-    let selectedRegion = regions[randomIndex]
-    console.log(selectedRegion.id);
-    find.innerHTML = "Найди на карте:" + selectedRegion.id
-
+    let randomRegion = Math.floor(Math.random() * regions.length)
+    console.log(randomRegion.id);
+    find.innerHTML = "Найди на карте:" + randomRegion.id
+    // console.log(region);
     region.addEventListener('click', function () {
-        
         // alert("Регион:" + region.id)
-        if (selectedRegion.id === region.id) {
+        if (randomRegion.id === region.id) {
             find.innerHTML = 'Победа!'
             this.style.fill = 'green'
         }
