@@ -64,3 +64,18 @@
       text-align: center;
       font-size: 30px;
     }
+    button{
+      display: block;
+      margin: auto;
+      background-color: green;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      
+    }
+    button:hover{
+      cursor: pointer;
+    }
+    .g{
+      display: none;
+    }
