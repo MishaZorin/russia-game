@@ -1,22 +1,23 @@
 let regions = document.querySelectorAll('path')
 let find = document.getElementById('find')
 
-
+let randomIndex = Math.floor(Math.random() * regions.length)
+// Получаем регион по индексу
+let randomRegion = regions[randomIndex]
+find.innerHTML = "Найди на карте:" + randomRegion.id
 
 regions.forEach(region => {
-    let randomRegion = Math.floor(Math.random() * regions.length)
-    // Получаем регион по индексу
-    let randomIndex = regions[randomRegion]
     // console.log(randomRegion);
-    find.innerHTML = "Найди на карте:" + randomIndex.id
+    
     // console.log(region);
     region.addEventListener('click', function () {
         // alert("Регион:" + region.id)
         console.log(region.id);
         
-        if (randomRegion.id === region.id) {
+        if (randomRegion === region) {
             find.innerHTML = 'Победа!'
             this.style.fill = 'green'
+            
         }
         else {
             find.innerHTML = 'Это другой регион!'
